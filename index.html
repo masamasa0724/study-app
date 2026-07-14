@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原子力発電基礎 勉強アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚛️ 原子力発電基礎 勉強アプリ</h1>
+            <p>原子力発電の基本知識をマスターしよう！</p>
+        </header>
+
+        <div class="score-board">
+            <div class="score-info">
+                <span>問 <strong id="currentQuestion">1</strong> / <strong id="totalQuestions">25</strong></span>
+                <span>正解: <strong id="correctCount">0</strong></span>
+                <span>進捗: <strong id="progressPercent">0</strong>%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+        </div>
+
+        <main id="mainContent">
+            <div id="startScreen" class="screen active">
+                <div class="start-content">
+                    <h2>原子力発電について学びます</h2>
+                    <p>全25問の一問一答で、原子力発電の基礎知識をマスター！</p>
+                    <button onclick="startQuiz()" class="btn btn-primary">スタート</button>
+                </div>
+            </div>
+
+            <div id="quizScreen" class="screen">
+                <div class="question-container">
+                    <h2 id="questionText"></h2>
+                </div>
+
+                <div class="options-container" id="optionsContainer"></div>
+
+                <div class="button-group">
+                    <button onclick="prevQuestion()" class="btn btn-secondary" id="prevBtn" style="display:none;">← 前へ</button>
+                    <button onclick="nextQuestion()" class="btn btn-primary" id="nextBtn" style="display:none;">次へ →</button>
+                </div>
+
+                <div id="explanationBox" class="explanation-box" style="display:none;">
+                    <h3>📚 解説</h3>
+                    <p id="explanationText"></p>
+                </div>
+            </div>
+
+            <div id="resultScreen" class="screen">
+                <div class="result-content">
+                    <h2>結果</h2>
+                    <div class="result-score">
+                        <p>正解数</p>
+                        <h1 id="finalScore">0</h1>
+                        <p id="finalPercentage">0%</p>
+                    </div>
+                    <div class="result-feedback" id="resultFeedback"></div>
+                    <button onclick="restartQuiz()" class="btn btn-primary">もう一度挑戦</button>
+                    <button onclick="resetProgress()" class="btn btn-secondary">進捗をリセット</button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 原子力発電基礎 勉強アプリ</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
