@@ -195,8 +195,9 @@ function showResult() {
     showScreen('resultScreen');
 }
 
-// クイズ再スタート
+// クイズ再スタート（新しい25問をランダム選出）
 function restartQuiz() {
+    quizData = getRandomQuizData(); // 新しいランダム25問を取得
     resetProgress();
     startQuiz();
 }
